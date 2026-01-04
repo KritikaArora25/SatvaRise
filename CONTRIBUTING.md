@@ -55,21 +55,29 @@ git pull origin main
 ```
 
 Switch to your branch
-
+```bash
 git checkout frontend
+```
+
 # or
+```bash
 git checkout backend
+```
 
 
 Commit changes
 
+```bash
 git add .
 git commit -m "feat: short meaningful message"
+```
 
 
 Push branch
 
+```bash
 git push
+```
 
 
 Open Pull Request → main
