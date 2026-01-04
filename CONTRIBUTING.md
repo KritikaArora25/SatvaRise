@@ -1,6 +1,4 @@
 
-
-```md
 # 🤝 Contributing to SatvaRise
 
 Thank you for contributing to **SatvaRise** 🌱  
