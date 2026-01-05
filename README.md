@@ -117,21 +117,26 @@ Response:
 ```
 
 ### Submit Response
+```json
 POST /api/pause/respond
+```
 
 
 Request:
 
+```json
 {
   "selectedOption": "Escaping boredom"
 }
-
+```
 
 Response:
 
+```json
 {
   "reply": "You are not craving pleasure. You are avoiding stillness..."
 }
+```
 
 ### 🤝 Collaboration Rules
 

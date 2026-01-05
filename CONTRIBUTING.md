@@ -54,7 +54,7 @@ Do not cross responsibilities without discussion.
 git pull origin main
 ```
 
-Switch to your branch
+2. Switch to your branch
 ```bash
 git checkout frontend
 ```
@@ -65,7 +65,7 @@ git checkout backend
 ```
 
 
-Commit changes
+3. Commit changes
 
 ```bash
 git add .
@@ -73,14 +73,14 @@ git commit -m "feat: short meaningful message"
 ```
 
 
-Push branch
+4. Push branch
 
 ```bash
 git push
 ```
 
 
-Open Pull Request → main
+5. Open Pull Request → main
 
 ### 📝 Commit Message Guidelines
 
