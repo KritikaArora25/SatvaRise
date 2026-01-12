@@ -23,6 +23,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("SatvaRise backend is running 🌱");
 });
+console.log("HF TOKEN AT BOOT:", process.env.HF_API_TOKEN ? "LOADED" : "MISSING");
 
 app.use("/api/pause", pauseRoutes);
 

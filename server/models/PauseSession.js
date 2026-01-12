@@ -6,27 +6,28 @@ const pauseSessionSchema = new mongoose.Schema({
     required: true
   },
 
-  // What the user typed (urge)
   urgeText: {
     type: String,
     required: true
   },
 
-  // Lifecycle of the pause
+  scenarios: {
+    type: Array,
+    required: true
+  },
+
   state: {
     type: String,
     enum: ["ACTIVE", "COMPLETED", "EXPIRED"],
     default: "ACTIVE"
   },
 
-  // Final decision by user
   outcome: {
     type: String,
     enum: ["WON", "INDULGED", null],
     default: null
   },
 
-  // Timestamps
   startedAt: {
     type: Date,
     default: Date.now
@@ -37,6 +38,12 @@ const pauseSessionSchema = new mongoose.Schema({
     default: null
   }
 });
+
+/**
+ * 🔒 Compound index for performance
+ * Enables fast retrieval of recent sessions per user
+ */
+pauseSessionSchema.index({ userId: 1, startedAt: -1 });
 
 const PauseSession = mongoose.model("PauseSession", pauseSessionSchema);
 
