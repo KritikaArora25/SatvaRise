@@ -20,18 +20,31 @@ Today’s summary:
 - Indulged: ${summary.indulged}
 ${summary.peakHour !== null ? `- Peak difficulty hour: ${summary.peakHour}:00` : ""}
 
+Context:
+This reflection is shown at night as a mirror of today only.
+
 Task:
-Generate ONE calm, non-judgmental insight to gently guide tomorrow.
+Generate ONE calm, observational insight that reflects today’s pattern only.
+
+This insight should feel specific to today, not universal.
 
 Rules:
-- One or two sentences only
-- No motivation or praise
-- No guilt or shame
-- No advice overload
-- No therapy or coaching language
-- Use observational tone
+- One or two short sentences only
+- Do NOT motivate, encourage, or inspire
+- Do NOT talk about growth, improvement, or opportunity
+- Do NOT mention tomorrow or the future
+- Do NOT give advice or suggestions
+- Do NOT praise or shame
+- Do NOT use therapy, coaching, or self-help language
+- Avoid abstract philosophy or poetic wording
+- Use a quiet, factual, reflective tone
+- Refer implicitly to today’s behavior (counts, balance, timing)
 - Avoid first-person language
 - No emojis
+- No explanations
+
+Output:
+Return ONLY the insight text. Nothing else.
 `;
 
     const response = await fetch(HF_API_URL, {
