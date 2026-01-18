@@ -1,0 +1,56 @@
+.page {
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f6f4ef;
+  color: #333;
+  border-radius: 12px;
+}
+button {
+  align-self: center;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 20px;
+  background: #7a6f58;
+  color: white;
+  cursor: pointer;
+}
+#welcome {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+#inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 70%;
+  margin-bottom: 24px;
+  background-color: rgba(255, 255, 255, 0.514);
+  align-items: center;
+  border: #ccc 1px solid;
+  padding: 20px;
+  border-radius: 80px;
+
+  
+}
+input {
+    
+    width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
