@@ -28,25 +28,33 @@ Task:
 Generate EXACTLY 3 cognitive scenarios.
 
 Each scenario must represent:
-1. Immediate experience of acting on the urge
-2. Long-term identity or pattern awareness
-3. Memory of past resistance or inner strength
+1. Immediate consequence of acting on the urge
+2. Long-term pattern if the urge is repeated
+3. Awareness of inner strength without recalling past events
 
 For EACH scenario:
 - Provide an id (snake_case)
-- Provide a situation (1–2 introspective sentences)
+- Provide a situation (ONE short sentence only)
 - Provide EXACTLY 3 options
 
 For EACH option:
 - id (snake_case)
-- text (short, neutral, realistic)
-- reflection (grounded insight, not advice)
+- text (very short, neutral, realistic)
+- reflection (ONE short, grounded sentence)
 
-Rules:
-- No advice
-- No motivation
-- No judgment
-- No therapy language
+Hard constraints (must follow exactly):
+- Do NOT use first-person ("I", "I'm", "my")
+- Do NOT describe scenes, places, or stories
+- Do NOT recall past events or memories
+- Do NOT describe emotions or mental health states
+- Do NOT suggest coping strategies, breaks, or self-care
+- Do NOT give advice or motivation
+- Do NOT judge the user
+- Avoid therapy, coaching, or self-help language
+- Use neutral or imagined phrasing ("Imagine...", "Notice...")
+- Keep situations abstract and impersonal
+- Keep option text under ~8–10 words
+- Keep reflections concise and observational
 - No emojis
 - No poetic metaphors
 - No explanations outside JSON
@@ -99,7 +107,7 @@ async function callHuggingFace(prompt) {
           content: prompt
         }
       ],
-      temperature: 0.6,
+      temperature: 0.3,
       max_tokens: 900
     })
   });
@@ -129,7 +137,7 @@ function extractJSONFromChat(data) {
 
 
 /**
- * 🔥 MAIN FUNCTION (USED BY SERVICE LAYER)
+ *  MAIN FUNCTION (USED BY SERVICE LAYER)
  */
 export async function generateScenariosFromAI(urgeText) {
   const prompt = buildPrompt(urgeText);

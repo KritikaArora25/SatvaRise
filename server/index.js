@@ -7,6 +7,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 
 import pauseRoutes from "./routes/pauseRoutes.js";
+import analyticsRoutes from "./routes/analyticsRoutes.js";
 
 
 const app = express();
@@ -26,12 +27,10 @@ app.get("/", (req, res) => {
 console.log("HF TOKEN AT BOOT:", process.env.HF_API_TOKEN ? "LOADED" : "MISSING");
 
 app.use("/api/pause", pauseRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// mongodb+srv://satvarise_user:Y4Z5TIoLT3shvKFG@cluster0.hsfdyui.mongodb.net/?appName=Cluster0
-// mongodb+srv://<db_username>:<db_password>@cluster0.hsfdyui.mongodb.net/?appName=Cluster0
