@@ -4,5 +4,8 @@ body {
   background: #f6f4ef;
   color: #333;
 }
-
+#root {
+  height: 100%;
+  align-items: center;
+}
 

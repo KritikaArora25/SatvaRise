@@ -1,39 +1,34 @@
-// ChatBot.jsx
-import { useState } from "react";
+import "./chatbot.css";
 
-const questions = [
-  {
-    q: "How are you feeling today?",
-    options: ["Happy", "Stressed", "Anxious", "Neutral"]
-  },
-  {
-    q: "What’s your main concern?",
-    options: ["Career", "Health", "Relationships", "Other"]
-  }
-];
-
-export default function ChatBot({ isLocked }) {
-  const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState([]);
-
-  if (isLocked)
-    return <p>⏳ Answering time over. Ask anything below.</p>;
-
+export default function ChatBot({
+  situation,
+  options = [],
+  isLocked,
+  onOptionSelect
+}) {
   return (
-    <div>
-      <p>{questions[step].q}</p>
+    <div className="containerchat">
+      {/* Situation */}
+      <p>{situation || "Stay present. The pause has begun."}</p>
 
-      {questions[step].options.map(opt => (
-        <button
-          key={opt}
-          onClick={() => {
-            setAnswers([...answers, opt]);
-            setStep(step + 1);
-          }}
-        >
-          {opt}
-        </button>
-      ))}
+      {/* Options */}
+      {options.length > 0 &&
+        options.map(opt => (
+          <button
+            key={opt.id}
+            disabled={isLocked}
+            onClick={() => onOptionSelect(opt.id)}
+          >
+            {opt.text}
+          </button>
+        ))}
+
+      {/* Lock message */}
+      {isLocked && (
+        <p style={{ opacity: 0.6, marginTop: "8px" }}>
+          Time is up. Choose your final decision.
+        </p>
+      )}
     </div>
   );
 }
